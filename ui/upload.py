@@ -106,7 +106,7 @@ def render_upload_page(db: DatabaseManager) -> None:
 
                     elif file_ext in SUPPORTED_VIDEO_FORMATS:
                         progress_bar.progress(25, text="Extracting audio track via FFmpeg...")
-                        content = VideoProcessor().process_video(
+                        content = VideoProcessor().process(
                             str(saved_temp_path),
                             title=lecture_title,
                             progress_callback=_progress_callback
